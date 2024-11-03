@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+SCRIPT_DIR=$(cd "$(dirname "$(readlink -f "$0")")" && pwd)
 
 if [ -z "$1" ]; then
   PWD=$(pwd)
