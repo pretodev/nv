@@ -1,0 +1,15 @@
+keybinds { 
+    locked {
+      bind "Ctrl f" { ToggleFloatingPanes; SwitchToMode "locked"; }
+    }
+}
+
+ui {
+  pane_frames {
+    rounded_corners true
+    hide_session_name true
+  }
+}
+
+
+default_mode "locked"
