@@ -1,7 +1,0 @@
-layout {
-  pane command="nvim" {
-      args ""
-      borderless true
-      close_on_exit true
-  }
-}
