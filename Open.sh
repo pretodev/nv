@@ -1,5 +1,20 @@
 #!/bin/sh
 
+# Verificar se o Alacritty e o Zellij estão instalados
+if ! command -v alacritty >/dev/null 2>&1; then
+  notify-send "Erro: Alacritty não encontrado. Por favor, instale o Alacritty."
+  exit 1
+fi
+
+if ! command -v zellij >/dev/null 2>&1; then
+  notify-send "Erro: Zellij não encontrado. Por favor, instale o Zellij."
+  exit 1
+fi
+
+# Obter os caminhos completos para Alacritty e Zellij
+ALACRITTY_PATH=$(command -v alacritty)
+ZELLIJ_PATH=$(command -v zellij)
+
 SCRIPT_DIR=$(cd "$(dirname "$(readlink -f "$0")")" && pwd)
 
 if [ -z "$1" ]; then
@@ -28,12 +43,12 @@ EOL
 
 CONFIG_DIR="$SCRIPT_DIR/configs"
 
-alacritty \
+$ALACRITTY_PATH \
   --working-directory "$PWD" \
   --class Alacritty \
   --config-file "$CONFIG_DIR/alacritty.toml" \
   -o "env.ZELLIJ_CONFIG_FILE=\"$CONFIG_DIR/zellij.kdl\"" \
-  -e zellij \
+  -e "$ZELLIJ_PATH" \
   --layout="$LAYOUT_FILE" &
 
 # Create .nv_history file in $HOME if it doesn't exist
