@@ -1,6 +1,6 @@
 keybinds { 
     locked {
-      bind "Ctrl f" { ToggleFloatingPanes; SwitchToMode "locked"; }
+      bind "Ctrl f" { ToggleFloatingPanes; SwitchToMode "normal"; }
     }
 }
 

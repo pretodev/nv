@@ -35,5 +35,4 @@ while true; do
   esac
 done
 
-# Run nv.sh with the selected or entered path
-"$SCRIPT_DIR/nv.sh" "$SELECTION"
+"$SCRIPT_DIR/Open.sh" "$SELECTION"
