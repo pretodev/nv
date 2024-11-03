@@ -1,25 +1,11 @@
 @import "~/.config/rofi/master-config.rasi"  
 
-/* ---- Window ---- */
-window {
-	width: 40%;
-    y-offset: 6px;
-    location: north;
-}
-
-/* ---- Inputbar ---- */
-inputbar {
-    enabled: true;
-}
-
-/* ---- Mainbox ---- */
-mainbox {
-	padding: 0px;
-    children: [ "entry"];
-}
-
-/* ---- Entry ---- */ 
 entry {
-	placeholder: "🔎 Google Search";
+	placeholder: "📁 Select project";
+}
+
+listview {
+  columns: 1;
+  lines: 8;
 }
 
